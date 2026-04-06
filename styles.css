@@ -282,6 +282,7 @@ h3 {
   min-height: 320px;
   display: grid;
   place-items: center;
+  padding: 24px 24px 0;
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(242, 222, 203, 0.6)),
     linear-gradient(180deg, #e8d8c9, #c7d7d1);
@@ -289,11 +290,11 @@ h3 {
 
 .portrait-image {
   position: relative;
-  width: min(78%, 300px);
+  width: min(100%, 360px);
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: center 20%;
-  border-radius: 120px 120px 32px 32px;
+  object-position: center 18%;
+  border-radius: 24px;
   border: 1px solid rgba(31, 36, 48, 0.1);
   background: rgba(255, 253, 248, 0.62);
   box-shadow: 0 16px 40px rgba(31, 36, 48, 0.12);
@@ -475,7 +476,7 @@ h3 {
   }
 
   .portrait-image {
-    width: min(64%, 280px);
+    width: min(100%, 340px);
   }
 }
 
@@ -519,7 +520,7 @@ h3 {
   }
 
   .portrait-image {
-    width: min(72%, 260px);
+    width: min(100%, 300px);
   }
 
   .site-footer {
