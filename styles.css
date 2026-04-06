@@ -259,6 +259,18 @@ h3 {
     linear-gradient(180deg, #e8d8c9, #c7d7d1);
 }
 
+.portrait-image {
+  position: relative;
+  width: min(78%, 300px);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 120px 120px 32px 32px;
+  border: 1px solid rgba(31, 36, 48, 0.1);
+  background: rgba(255, 253, 248, 0.62);
+  box-shadow: 0 16px 40px rgba(31, 36, 48, 0.12);
+}
+
 .portrait-glow {
   position: absolute;
   inset: auto auto 28px 50%;
@@ -268,21 +280,6 @@ h3 {
   background: radial-gradient(circle, rgba(163, 76, 39, 0.32), transparent 68%);
   transform: translateX(-50%);
   filter: blur(12px);
-}
-
-.portrait-placeholder {
-  position: relative;
-  width: 180px;
-  height: 220px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(31, 36, 48, 0.1);
-  border-radius: 100px 100px 36px 36px;
-  background: rgba(255, 253, 248, 0.62);
-  color: var(--muted);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .hero-card-body {
@@ -375,7 +372,7 @@ h3 {
 }
 
 .work-list {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .work-card {
@@ -448,6 +445,10 @@ h3 {
   .hero-copy {
     padding: 32px;
   }
+
+  .portrait-image {
+    width: min(64%, 280px);
+  }
 }
 
 @media (max-width: 720px) {
@@ -483,6 +484,10 @@ h3 {
   .metric-grid,
   .timeline-item {
     grid-template-columns: 1fr;
+  }
+
+  .portrait-image {
+    width: min(72%, 260px);
   }
 
   .site-footer {
