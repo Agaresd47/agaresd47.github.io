@@ -275,44 +275,40 @@ h3 {
 
 .hero-card {
   overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 .portrait-frame {
   position: relative;
-  min-height: 320px;
+  min-height: 420px;
   display: grid;
   place-items: center;
-  padding: 24px 24px 0;
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(242, 222, 203, 0.6)),
-    linear-gradient(180deg, #e8d8c9, #c7d7d1);
+  padding: 18px 18px 0;
+  background: linear-gradient(180deg, #f3ede3 0%, #efe7da 100%);
 }
 
 .portrait-image {
   position: relative;
-  width: min(100%, 360px);
+  width: 100%;
+  max-width: 388px;
   aspect-ratio: 3 / 4;
   object-fit: cover;
-  object-position: center 18%;
-  border-radius: 24px;
+  object-position: center 16%;
+  border-radius: 18px;
   border: 1px solid rgba(31, 36, 48, 0.1);
   background: rgba(255, 253, 248, 0.62);
-  box-shadow: 0 16px 40px rgba(31, 36, 48, 0.12);
+  box-shadow: 0 12px 28px rgba(31, 36, 48, 0.08);
 }
 
 .portrait-glow {
-  position: absolute;
-  inset: auto auto 28px 50%;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(163, 76, 39, 0.32), transparent 68%);
-  transform: translateX(-50%);
-  filter: blur(12px);
+  display: none;
 }
 
 .hero-card-body {
   padding: 28px;
+  border-top: 1px solid var(--line);
+  background: rgba(255, 253, 248, 0.9);
 }
 
 .meta-label,
@@ -476,7 +472,7 @@ h3 {
   }
 
   .portrait-image {
-    width: min(100%, 340px);
+    max-width: 420px;
   }
 }
 
@@ -520,7 +516,7 @@ h3 {
   }
 
   .portrait-image {
-    width: min(100%, 300px);
+    max-width: 100%;
   }
 
   .site-footer {
