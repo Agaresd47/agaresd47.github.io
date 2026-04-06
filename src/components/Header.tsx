@@ -5,6 +5,7 @@ import { getProfileSection, type Locale } from "@/utils/profileData";
 export default function Header({ locale = "en" }: { locale?: Locale }) {
   const basics = getProfileSection("basics", locale);
   const navigation = getProfileSection("navigation", locale);
+  const contact = getProfileSection("contact", locale);
   const isZh = locale === "zh";
 
   return (
@@ -12,12 +13,36 @@ export default function Header({ locale = "en" }: { locale?: Locale }) {
       className={`sticky top-0 z-20 backdrop-blur-sm bg-white/70 dark:bg-black/70 border-b border-gray-200 dark:border-gray-800`}
     >
       <div className="container flex items-center justify-between px-6 py-4 mx-auto">
-        <Link
-          href={isZh ? "/zh" : "/"}
-          className="transition-colors hover:text-blue-600 dark:hover:text-blue-400"
-        >
-          <h1 className="text-xl font-bold tracking-tight">{basics.name}</h1>
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link
+            href={isZh ? "/zh" : "/"}
+            className="transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            <h1 className="text-xl font-bold tracking-tight">{basics.name}</h1>
+          </Link>
+          <div className="items-center hidden gap-4 text-sm md:flex">
+            {contact.socialLinks.github && (
+              <a
+                href={contact.socialLinks.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                GitHub
+              </a>
+            )}
+            {contact.socialLinks.linkedin && (
+              <a
+                href={contact.socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
+              >
+                LinkedIn
+              </a>
+            )}
+          </div>
+        </div>
 
         {/* Desktop navigation with CV button */}
         <nav className="items-center hidden md:flex">

@@ -10,6 +10,7 @@ export default function MobileMenuToggle({
 }) {
   const navigation = getProfileSection("navigation", locale);
   const basics = getProfileSection("basics", locale);
+  const contact = getProfileSection("contact", locale);
   const isZh = locale === "zh";
 
   // Start with a consistent state
@@ -151,6 +152,32 @@ export default function MobileMenuToggle({
                   </a>
                 </li>
               ))}
+              {contact.socialLinks.github && (
+                <li>
+                  <a
+                    href={contact.socialLinks.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-3 py-2 rounded-md text-base font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-blue-600 dark:hover:text-blue-400"
+                    onClick={toggleMenu}
+                  >
+                    GitHub
+                  </a>
+                </li>
+              )}
+              {contact.socialLinks.linkedin && (
+                <li>
+                  <a
+                    href={contact.socialLinks.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-3 py-2 rounded-md text-base font-medium hover:bg-neutral-100 dark:hover:bg-neutral-800 hover:text-blue-600 dark:hover:text-blue-400"
+                    onClick={toggleMenu}
+                  >
+                    LinkedIn
+                  </a>
+                </li>
+              )}
               <li>
                 <a
                   href={basics.resumeUrl}
