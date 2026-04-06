@@ -4,35 +4,48 @@
 
 `C:\Users\agares\OneDrive\0 求职\personal-site`
 
-This repository was migrated from a static HTML site to a Next.js portfolio template based on:
+This repo is the active personal/job-search website project.
+
+## Current State
+
+The site was originally a hand-written static HTML portfolio.
+It has now been fully migrated to a Next.js portfolio template based on:
 
 - `https://github.com/kimsengduong/nextjs-portfolio-template`
 
-## Current Goal
+The current version is much simpler, easier to read, and easier to maintain than the earlier custom static version.
 
-This site is no longer being treated as an academic homepage first.
-It is now positioned as a job-search portfolio site for 2026 full-time roles.
+## Primary Goal
 
-Primary target directions:
+This website is now positioned as a **job-search portfolio site**, not an academic-homepage-first site.
+
+Main target directions:
 
 - Machine Learning Engineer
 - Applied Scientist
 - Quantitative Research
 - Medical AI
-- LLM systems / data-heavy applied AI roles
+- LLM systems / applied AI / data-heavy engineering roles
 
-## Deployment
+## Repo and Deployment
 
-The site is deployed through GitHub Pages using GitHub Actions.
+Repo:
 
-Important details:
+- `Agaresd47/agaresd47.github.io`
 
-- Repo: `Agaresd47/agaresd47.github.io`
-- Live site: `https://agaresd47.github.io/`
-- Pages build type: `workflow`
-- Static export is enabled in `next.config.ts`
+Live URLs:
 
-Relevant files:
+- English: `https://agaresd47.github.io/`
+- Chinese: `https://agaresd47.github.io/zh`
+
+Deployment setup:
+
+- GitHub Pages is enabled
+- Pages build type is now `workflow`
+- Deployment is handled by GitHub Actions, not branch-based legacy Pages
+- Static export is enabled in Next.js
+
+Key deployment files:
 
 - [next.config.ts](C:/Users/agares/OneDrive/0%20求职/personal-site/next.config.ts)
 - [.github/workflows/deploy-pages.yml](C:/Users/agares/OneDrive/0%20求职/personal-site/.github/workflows/deploy-pages.yml)
@@ -41,7 +54,7 @@ Relevant files:
 
 Node LTS was installed on this machine during setup.
 
-Typical commands from the repo root:
+Use these commands from the repo root:
 
 ```powershell
 npm install
@@ -54,104 +67,207 @@ Build check:
 npm run build
 ```
 
-The build succeeded after migration, so the current project is GitHub Pages compatible.
+This project has already successfully built with:
 
-## Where Content Lives
+- static export
+- English route `/`
+- Chinese route `/zh`
 
-Main content is data-driven and should usually be edited here first:
+## Content Model
 
-- [src/data/profile.json](C:/Users/agares/OneDrive/0%20求职/personal-site/src/data/profile.json)
+This project is data-driven.
 
-This file currently controls:
+Main content files:
 
-- name / title
+- English content: [src/data/profile.json](C:/Users/agares/OneDrive/0%20求职/personal-site/src/data/profile.json)
+- Chinese content: [src/data/profile.zh.json](C:/Users/agares/OneDrive/0%20求职/personal-site/src/data/profile.zh.json)
+
+These files control:
+
+- name
+- title
 - hero summary
 - about text
-- experience entries
-- selected work / project cards
+- experience
+- selected work / projects
 - skills
 - education
 - contact links
 - navigation labels
 
+## Routing
+
+Current route structure:
+
+- English home: [src/app/page.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/app/page.tsx)
+- Chinese home: [src/app/zh/page.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/app/zh/page.tsx)
+
+The bilingual support is implemented through:
+
+- `profile.json` and `profile.zh.json`
+- locale-aware component props
+- shared page renderer in `src/app/page.tsx`
+
+Locale utility:
+
+- [src/utils/profileData.ts](C:/Users/agares/OneDrive/0%20求职/personal-site/src/utils/profileData.ts)
+
 ## Key Components
 
-These are the main files to touch when refining presentation:
+Main layout and section files:
 
+- [src/components/Header.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/components/Header.tsx)
 - [src/components/HeroSection.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/components/HeroSection.tsx)
 - [src/components/AboutSection.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/components/AboutSection.tsx)
 - [src/components/ExperienceSection.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/components/ExperienceSection.tsx)
 - [src/components/ProjectsSection.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/components/ProjectsSection.tsx)
 - [src/components/SkillsSection.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/components/SkillsSection.tsx)
+- [src/components/EducationSection.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/components/EducationSection.tsx)
 - [src/components/ContactSection.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/components/ContactSection.tsx)
+- [src/components/Footer.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/components/Footer.tsx)
 
 ## Assets
 
-Current assets in use:
+Current production assets:
 
-- profile photo: [public/profile.jpg](C:/Users/agares/OneDrive/0%20求职/personal-site/public/profile.jpg)
-- resume: [public/Zifei_Dong_Resume.pdf](C:/Users/agares/OneDrive/0%20求职/personal-site/public/Zifei_Dong_Resume.pdf)
+- photo: [public/profile.jpg](C:/Users/agares/OneDrive/0%20求职/personal-site/public/profile.jpg)
+- English resume: [public/Zifei_Dong_Resume.pdf](C:/Users/agares/OneDrive/0%20求职/personal-site/public/Zifei_Dong_Resume.pdf)
+- Chinese resume: [public/董自飞简历.pdf](C:/Users/agares/OneDrive/0%20求职/personal-site/public/%E8%91%A3%E8%87%AA%E9%A3%9E%E7%AE%80%E5%8E%86.pdf)
 
-The resume link is intentionally configured to open in a new tab, not force download.
+Resume links are intentionally configured to **open in a new tab**, not force download.
 
-## Design Direction Chosen
+## Important UX Decisions Already Made
 
-The previous handcrafted static version felt too decorative and harder to iterate on.
-The current template was chosen because it is:
+### 1. Switched away from decorative static design
 
-- easier to read
-- cleaner for recruiting use
-- easier to maintain
-- data-driven
-- simpler to edit without redesigning the whole page
+The earlier custom HTML/CSS version felt too decorative and harder to iterate on.
+The current template is intentionally cleaner and more recruiter-readable.
 
-## What Was Intentionally Changed
+### 2. Reframed for job search
 
-From the original template:
+The site is no longer written like a generic academic homepage.
+It is framed around:
 
-- configured for static export
-- adapted for GitHub Pages deployment
-- changed hero CTA from generic portfolio wording to job-search wording
-- changed CV buttons from download to open-in-new-tab
-- changed contact section to job-search positioning
-- changed section labels to be more recruiter-readable
-- changed portrait styling from circular avatar to rectangular profile photo
-- filled profile data with Zifei Dong's actual content
+- full-time opportunities in 2026
+- applied ML / AI / quant roles
+- practical project execution
+
+### 3. Bilingual support restored
+
+Chinese support was added back after the first Next.js migration.
+
+Current bilingual behavior:
+
+- `/` = English
+- `/zh` = Chinese
+- language toggle is in the header
+
+### 4. GitHub and LinkedIn moved into the top header
+
+The social links were moved out of the bottom contact section.
+
+Current behavior:
+
+- `GitHub` and `LinkedIn` appear in the top horizontal bar
+- they sit to the right of the site name
+- mobile menu also includes them
+- bottom contact section no longer duplicates them
+
+This change was specifically requested because the footer/contact placement felt less useful.
+
+## Header Structure
+
+Current header contains:
+
+- site name (`Zifei Dong` / `董自飞`)
+- GitHub link
+- LinkedIn link
+- navigation links
+- language switch
+- resume button
+
+Main file:
+
+- [src/components/Header.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/components/Header.tsx)
+
+Mobile menu file:
+
+- [src/components/MobileMenuToggle.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/components/MobileMenuToggle.tsx)
+
+## Contact Section
+
+The contact section was simplified and now focuses on:
+
+- open to 2026 opportunities
+- resume button
+- email button
+
+GitHub and LinkedIn were intentionally removed from the bottom contact block after being moved to the header.
+
+## Metadata / SEO
+
+Metadata was updated away from the template defaults and now points to:
+
+- `https://agaresd47.github.io`
+- profile image as OG/Twitter image
+
+Main metadata file:
+
+- [src/app/layout.tsx](C:/Users/agares/OneDrive/0%20求职/personal-site/src/app/layout.tsx)
+
+## What Was Already Verified
+
+The following are known-good:
+
+- `npm run build` succeeds locally
+- `/` exports statically
+- `/zh` exports statically
+- GitHub Actions Pages workflow runs successfully
+- site is live on GitHub Pages
+
+## Current Git Status
+
+At the time this note was updated, the repo had already gone through:
+
+- migration to Next.js template
+- GitHub Pages workflow deployment setup
+- bilingual route addition
+- header social-link relocation
+
+If a future session starts, first inspect current git status in case the user has made local changes after this note was written.
 
 ## Recommended Next Improvements
 
-If continuing in a future Codex chat, the best next tasks are:
+The most useful next steps are:
 
-1. Tighten the hero text.
-   Make the opening even shorter and more role-oriented.
+1. Tighten hero copy further.
+   Make the first screen even more concise and recruiter-facing.
 
-2. Rewrite `Selected Work`.
-   Current cards are good enough, but can be made more recruiter-friendly by emphasizing outcomes, scale, and execution.
+2. Improve `Selected Work`.
+   The cards are functional, but they can be rewritten to emphasize outcomes, scale, and execution more directly.
 
-3. Decide whether to keep publications inside `Selected Work` or split into:
-   - Selected Projects
-   - Publications
+3. Improve Chinese copy quality.
+   Some Chinese strings should be reviewed in a UTF-8-safe editor and refined for more natural job-search language.
 
-4. Potentially add one more section:
+4. Potentially add one section:
    - `What I’m Looking For`
    or
    - `Featured Projects`
 
-5. If bilingual support becomes important again, add a language toggle later.
-   It was dropped during migration to keep the new version simpler.
+5. Decide whether publications should remain embedded inside `Selected Work` or be split later.
 
-## Current Status
+## Important Note About Chinese Text
 
-As of the migration:
+PowerShell output in this environment sometimes displays Chinese text as mojibake even when the underlying file is correct UTF-8.
 
-- local repo path is correct
-- git repo is intact
-- GitHub Pages deployment is configured
-- GitHub Actions deployment completed successfully
-- website is live on the new Next.js version
+Do not assume the file is corrupted just because terminal output looks garbled.
+When verifying Chinese files, prefer:
+
+- `Get-Content -Encoding utf8`
+- or a UTF-8 aware editor
 
 ## Suggested Prompt For Future Codex Sessions
 
-If starting a fresh conversation, a good prompt is:
+Use something like:
 
-`Open C:\Users\agares\OneDrive\0 求职\personal-site and continue refining the job-search version of the Next.js portfolio. Read CODEX.md first, then improve the hero and selected work sections without making the design more decorative.`
+`Open C:\Users\agares\OneDrive\0 求职\personal-site, read CODEX.md first, then continue refining the bilingual job-search portfolio. Keep the design clean and recruiter-readable. Prioritize hero copy, selected work, and Chinese text quality.`
