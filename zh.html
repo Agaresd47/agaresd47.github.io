@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>董自飞 | 人工智能研究</title>
+  <meta
+    name="description"
+    content="董自飞的个人主页，涵盖医学影像、生成式模型、金融文本理解与代表性科研成果。"
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="lang-zh">
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="site-mark" href="#top">董</a>
+      <nav class="site-nav">
+        <a href="#about">简介</a>
+        <a href="#research">研究方向</a>
+        <a href="#work">论文成果</a>
+        <a href="#experience">经历</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <div class="lang-switch" aria-label="语言切换">
+        <a class="lang-link" href="index.html">English</a>
+        <a class="lang-link is-active" href="zh.html">中文</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">人工智能研究 / 数据科学 / 工程实现</p>
+          <h1>董自飞</h1>
+          <p class="hero-lead">
+            我主要做医学影像、生成式重建和面向高噪声真实数据场景的机器学习系统。
+            关注的问题通常都很具体：标签不完整、采集条件复杂、数据分布偏、但结果还必须稳定可靠。
+          </p>
+          <p class="hero-sublead">
+            我目前就读于 <span class="accent">范德堡大学数据科学硕士</span>，同时在
+            <span class="accent">西北大学 AIMP 实验室</span> 主导研究项目，主要工作包括
+            任意位姿胸片分割、低剂量 X 光去噪重建、合成数据流水线，以及面向金融披露文本的
+            大模型推理与因子抽取。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">查看论文成果</a>
+            <a class="button button-secondary" href="index.html">English Version</a>
+            <a class="button button-secondary" href="mailto:zifei.dong@vanderbilt.edu">邮件联系</a>
+          </div>
+          <ul class="hero-links">
+            <li><a href="https://scholar.google.com/citations?user=BW8oVdIAAAAJ" target="_blank" rel="noreferrer">谷歌学术</a></li>
+            <li><a href="https://github.com/Agaresd47" target="_blank" rel="noreferrer">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/bruce-zdong/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+            <li><a href="#contact">联系方式</a></li>
+          </ul>
+        </div>
+        <div class="hero-card">
+          <div class="portrait-frame">
+            <div class="portrait-glow"></div>
+            <img class="portrait-image" src="assets/profile.jpg" alt="董自飞照片">
+          </div>
+          <div class="hero-card-body">
+            <p class="meta-label">当前重点</p>
+            <p class="meta-value">胸部 X 光分割、2.5D 低剂量 X 光去噪重建、弱监督学习，以及面向金融披露文本的大模型管线。</p>
+            <div class="metric-grid">
+              <div>
+                <span class="metric-number">3</span>
+                <span class="metric-label">已发表/在审论文</span>
+              </div>
+              <div>
+                <span class="metric-number">8+</span>
+                <span class="metric-label">主要项目</span>
+              </div>
+              <div>
+                <span class="metric-number">2026</span>
+                <span class="metric-label">硕士毕业时间</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section-heading">
+          <p class="eyebrow">简介</p>
+          <h2>我主要在做什么</h2>
+        </div>
+        <div class="two-column">
+          <div>
+            <p>
+              最近几年的工作基本集中在三个方向。第一，做医学影像里的分割和重建，
+              尤其是采集条件复杂、标签不完整、真实数据很脏的场景。第二，做生成式建模和表征学习，
+              用来解决低剂量成像、结构一致性和跨域泛化问题。第三，做大模型和数据管线，
+              把金融披露文本这类超长、噪声高、结构不统一的数据转成可以用于研究和投资的结构化信号。
+            </p>
+            <p>
+              我比较关心“难数据”问题，也就是数据不完美，但输出必须能用。因此我的很多工作都会落到
+              合成数据、弱监督、鲁棒训练、数据工程和端到端评估这些比较务实的环节上。
+            </p>
+          </div>
+          <div class="info-stack">
+            <div class="info-card">
+              <span class="info-label">机构</span>
+              <span class="info-value">范德堡大学 / 西北大学 AIMP 实验室</span>
+            </div>
+            <div class="info-card">
+              <span class="info-label">方向</span>
+              <span class="info-value">医学影像, 生成模型, 大语言模型, 量化机器学习</span>
+            </div>
+            <div class="info-card">
+              <span class="info-label">所在地</span>
+              <span class="info-value">美国田纳西州纳什维尔</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="research">
+        <div class="section-heading">
+          <p class="eyebrow">研究方向</p>
+          <h2>核心研究主题</h2>
+        </div>
+        <div class="card-grid">
+          <article class="feature-card">
+            <h3>不完整监督下的医学影像建模</h3>
+            <p>面向部分标注、噪声标注和强分布偏移场景，设计可落地的分割与重建方案。</p>
+          </article>
+          <article class="feature-card">
+            <h3>生成式模型与重建</h3>
+            <p>利用扩散模型和潜空间先验处理低剂量 X 光去噪、解剖一致性和运动鲁棒性问题。</p>
+          </article>
+          <article class="feature-card">
+            <h3>高噪声文本与时序数据上的大模型系统</h3>
+            <p>面向金融披露和复杂结构化数据，构建从原始文本到结构化信号的完整推理与数据管线。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="work">
+        <div class="section-heading">
+          <p class="eyebrow">论文成果</p>
+          <h2>代表性论文</h2>
+        </div>
+        <div class="work-list">
+          <article class="work-card">
+            <div class="work-meta">2025 / Medical Image Analysis / 在审</div>
+            <h3>AnyCXR: 任意采集位姿胸部 X 光的人体解剖分割</h3>
+            <p>
+              第一作者工作。面向真实采集条件下位姿复杂、标注不完整的胸片数据，
+              结合多阶段合成数据、缺陷标注和条件联合正则化方法，提升跨视角和高噪声场景下的分割鲁棒性。
+            </p>
+            <div class="tag-row">
+              <span>胸片分割</span>
+              <span>合成数据</span>
+              <span>弱监督</span>
+            </div>
+            <a href="https://arxiv.org/abs/2512.17263" target="_blank" rel="noreferrer">arXiv</a>
+          </article>
+          <article class="work-card">
+            <div class="work-meta">2025 / Asia-Pacific Education Researcher</div>
+            <h3>沉浸式虚拟现实在职业技能学习中的有效性研究</h3>
+            <p>
+              参与式研究工作。我负责 Unity3D 虚拟现实环境开发，并基于 SteamVR
+              实现同步数据采集，支持行为与实验过程分析。
+            </p>
+            <div class="tag-row">
+              <span>VR</span>
+              <span>Unity3D</span>
+              <span>数据采集</span>
+            </div>
+            <a href="https://link.springer.com/article/10.1007/s40299-024-00831-0" target="_blank" rel="noreferrer">论文链接</a>
+          </article>
+          <article class="work-card">
+            <div class="work-meta">2024 / Behavioral Sciences</div>
+            <h3>精英高校学生压力与学业自我效能关系的纵向分析</h3>
+            <p>
+              基于 2,812 名参与者的纵向数据分析。我负责交叉滞后模型设计、
+              统计分析和可视化流程实现。
+            </p>
+            <div class="tag-row">
+              <span>纵向数据</span>
+              <span>统计建模</span>
+              <span>可视化</span>
+            </div>
+            <a href="https://www.mdpi.com/2076-328X/14/7/537" target="_blank" rel="noreferrer">论文链接</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="section-heading">
+          <p class="eyebrow">经历</p>
+          <h2>主要科研与工程经历</h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-year">2025 - 至今</span>
+            <div>
+              <h3>西北大学 AIMP 实验室，首席研究员</h3>
+              <p>主导 AnyCXR 和 2.5D 低剂量 X 光去噪项目，负责合成数据流水线、弱监督学习、扩散建模和运动鲁棒重建方案设计。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2026 - 至今</span>
+            <div>
+              <h3>联博基金 x 范德堡大学，量化研究员</h3>
+              <p>面向 10 年 EDGAR 披露文本，构建基于大模型的因子抽取、监督微调数据集和推理增强管线。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2025 - 至今</span>
+            <div>
+              <h3>范德堡大学 Ultimate Consequences 实验室，数据架构师与工程师</h3>
+              <p>搭建端到端数据基础设施，重构遗留 R 流程，并支持 639 名个体生命史和死亡率数据的稳定分析。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2024 - 2026</span>
+            <div>
+              <h3>范德堡大学，数据科学硕士</h3>
+              <p>预计 2026 年 5 月毕业，GPA 3.8/4.0。</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <span class="timeline-year">2021 - 2024</span>
+            <div>
+              <h3>北卡罗来纳大学教堂山分校，计算机科学与统计双学士</h3>
+              <p>GPA 3.625/4.0，优秀毕业生。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="section-heading">
+          <p class="eyebrow">联系</p>
+          <h2>联系方式</h2>
+        </div>
+        <div class="contact-panel">
+          <p>
+            如果你也在做医学 AI、生成式重建、量化研究，或者高噪声真实数据场景下的大模型系统，欢迎联系我。
+          </p>
+          <div class="contact-actions">
+            <a class="button button-primary" href="mailto:zifei.dong@vanderbilt.edu">zifei.dong@vanderbilt.edu</a>
+            <a class="button button-secondary" href="https://github.com/Agaresd47" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>最近更新 <span id="last-updated"></span></p>
+      <p>范德堡大学 / 西北大学 / Nashville, TN</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

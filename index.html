@@ -6,11 +6,11 @@
   <title>Zifei Dong | AI Research</title>
   <meta
     name="description"
-    content="Zifei Dong's personal website covering AI research, medical imaging, multimodal learning, quantitative NLP, and selected publications."
+    content="Zifei Dong's personal website covering medical imaging, generative models, quantitative NLP, and selected research."
   >
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,6 +24,10 @@
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
       </nav>
+      <div class="lang-switch" aria-label="Language switcher">
+        <a class="lang-link is-active" href="index.html">English</a>
+        <a class="lang-link" href="zh.html">中文</a>
+      </div>
     </header>
 
     <main id="top">
@@ -32,18 +36,18 @@
           <p class="eyebrow">AI Researcher / Data Scientist / Builder</p>
           <h1>Zifei Dong</h1>
           <p class="hero-lead">
-            I build machine learning systems for medical imaging, multimodal modeling,
-            and data-centric reasoning under noisy real-world conditions.
+            I work on medical imaging, generative reconstruction, and machine learning systems
+            that have to perform under noisy data, weak labels, and messy real-world settings.
           </p>
           <p class="hero-sublead">
-            I am an M.S. student in <span class="accent">Data Science</span> at
-            <span class="accent">Vanderbilt University</span> and a research lead in the
-            <span class="accent">AIMP Lab at Northwestern University</span>, with work spanning
-            chest X-ray segmentation, generative reconstruction, quantitative research, and
-            large-model reasoning systems.
+            I am currently an M.S. student in <span class="accent">Data Science</span> at
+            <span class="accent">Vanderbilt University</span>. I also lead research projects with
+            the <span class="accent">AIMP Lab at Northwestern University</span>, where I work on
+            chest X-ray segmentation, synthetic-data pipelines, and low-dose X-ray denoising.
           </p>
           <div class="hero-actions">
             <a class="button button-primary" href="#work">View Publications</a>
+            <a class="button button-secondary" href="zh.html">中文版</a>
             <a class="button button-secondary" href="mailto:zifei.dong@vanderbilt.edu">Email Me</a>
           </div>
           <ul class="hero-links">
@@ -60,7 +64,7 @@
           </div>
           <div class="hero-card-body">
             <p class="meta-label">Current focus</p>
-            <p class="meta-value">Medical image understanding, generative reconstruction, weak supervision, and LLM-based reasoning systems for high-noise domains.</p>
+            <p class="meta-value">Chest X-ray segmentation, 2.5D low-dose X-ray denoising, weak supervision, and LLM pipelines for financial disclosures.</p>
             <div class="metric-grid">
               <div>
                 <span class="metric-number">3</span>
@@ -68,7 +72,7 @@
               </div>
               <div>
                 <span class="metric-number">8+</span>
-                <span class="metric-label">Research projects</span>
+                <span class="metric-label">Projects</span>
               </div>
               <div>
                 <span class="metric-number">2026</span>
@@ -82,21 +86,21 @@
       <section class="section" id="about">
         <div class="section-heading">
           <p class="eyebrow">About</p>
-          <h2>Applied AI with a strong bias toward real data and real constraints</h2>
+          <h2>Concrete work across research, engineering, and modeling</h2>
         </div>
         <div class="two-column">
           <div>
             <p>
-              My research centers on robust machine learning in settings where data are noisy,
-              labels are incomplete, or deployment constraints actually matter. I am especially
-              interested in medical imaging, multimodal learning, synthetic data generation,
-              and model adaptation under imperfect supervision.
+              My recent work has focused on three main directions. First, I build medical imaging
+              systems that handle difficult acquisition conditions, including arbitrary-view chest
+              X-rays, partial labels, and low-dose inputs. Second, I work on generative and
+              representation-learning methods for reconstruction and anatomical consistency. Third,
+              I build LLM-based pipelines for financial text understanding and structured signal extraction.
             </p>
             <p>
-              In parallel with academic research, I have worked on quantitative research and
-              data engineering problems involving financial filings, longitudinal social-science
-              data, and large-scale processing pipelines. I enjoy moving between modeling,
-              infrastructure, and end-to-end experimentation.
+              I am most interested in problems where the data are imperfect but the output still
+              needs to be reliable. That is why a lot of my work involves synthetic data generation,
+              weak supervision, robust training, data infrastructure, and end-to-end evaluation.
             </p>
           </div>
           <div class="info-stack">
@@ -106,11 +110,11 @@
             </div>
             <div class="info-card">
               <span class="info-label">Interests</span>
-              <span class="info-value">Medical Imaging, Generative Models, LLMs, Quantitative ML</span>
+              <span class="info-value">Medical Imaging, Diffusion Models, LLMs, Quantitative ML</span>
             </div>
             <div class="info-card">
-              <span class="info-label">Based in</span>
-              <span class="info-value">Nashville, Tennessee</span>
+              <span class="info-label">Location</span>
+              <span class="info-value">Nashville, Tennessee, United States</span>
             </div>
           </div>
         </div>
@@ -119,20 +123,20 @@
       <section class="section" id="research">
         <div class="section-heading">
           <p class="eyebrow">Research</p>
-          <h2>Problems I keep returning to</h2>
+          <h2>Research themes</h2>
         </div>
         <div class="card-grid">
           <article class="feature-card">
-            <h3>Medical Imaging and Weak Supervision</h3>
-            <p>Building segmentation and reconstruction systems that remain useful under limited labels, domain shift, and imperfect annotations.</p>
+            <h3>Medical Imaging Under Imperfect Supervision</h3>
+            <p>I design segmentation and reconstruction pipelines for settings with noisy labels, partial annotations, and strong distribution shift.</p>
           </article>
           <article class="feature-card">
-            <h3>Generative Modeling for Clinical Data</h3>
-            <p>Exploring diffusion-based and representation-aware approaches for low-dose imaging, anatomical consistency, and motion robustness.</p>
+            <h3>Generative Models for Reconstruction</h3>
+            <p>I work on diffusion-style denoising and latent-space priors for low-dose X-ray reconstruction, with attention to motion robustness and anatomical fidelity.</p>
           </article>
           <article class="feature-card">
-            <h3>Reasoning over Noisy Text and Time Series</h3>
-            <p>Using LLMs and structured learning pipelines for financial disclosures, longitudinal data, and quantitative decision support.</p>
+            <h3>LLMs for Noisy Structured Domains</h3>
+            <p>I build data pipelines and reasoning systems that turn long financial disclosures and heterogeneous records into usable structured signals.</p>
           </article>
         </div>
       </section>
@@ -140,16 +144,16 @@
       <section class="section" id="work">
         <div class="section-heading">
           <p class="eyebrow">Publications</p>
-          <h2>Selected papers and ongoing work</h2>
+          <h2>Selected papers</h2>
         </div>
         <div class="work-list">
           <article class="work-card">
             <div class="work-meta">2025 / Medical Image Analysis / Under Review</div>
             <h3>AnyCXR: Human Anatomy Segmentation of Chest X-ray at Any Acquisition Position</h3>
             <p>
-              First-author work on robust anatomy segmentation for chest X-rays across arbitrary
-              acquisition positions using multi-stage domain-randomized synthetic data, imperfect
-              annotations, and conditional joint annotation regularization learning.
+              First-author work on anatomy segmentation for chest X-rays acquired at arbitrary positions.
+              The project combines multi-stage synthetic data generation, imperfect annotations, and
+              conditional regularization to improve robustness across view and noise conditions.
             </p>
             <div class="tag-row">
               <span>Chest X-ray</span>
@@ -162,13 +166,13 @@
             <div class="work-meta">2025 / Asia-Pacific Education Researcher</div>
             <h3>The Effectiveness of Immersive Virtual Reality for Vocational Skills Learning</h3>
             <p>
-              Co-authored study on immersive VR for vocational learning. I developed the Unity3D
-              VR environment and implemented synchronous data collection with SteamVR.
+              Study on immersive VR for vocational learning. I developed the Unity3D environment
+              and built synchronous data-collection components using SteamVR.
             </p>
             <div class="tag-row">
               <span>VR</span>
               <span>Unity3D</span>
-              <span>Behavior Data</span>
+              <span>Data Collection</span>
             </div>
             <a href="https://link.springer.com/article/10.1007/s40299-024-00831-0" target="_blank" rel="noreferrer">Publication</a>
           </article>
@@ -176,8 +180,8 @@
             <div class="work-meta">2024 / Behavioral Sciences</div>
             <h3>The Relationship Between Stress and Academic Self-Efficacy Among Students at Elite Colleges</h3>
             <p>
-              Longitudinal analysis over 2,812 participants. I designed the cross-lagged
-              statistical model and led the analysis and visualization workflow.
+              Longitudinal analysis over 2,812 participants. I designed the cross-lagged statistical
+              model and led the analysis and visualization pipeline.
             </p>
             <div class="tag-row">
               <span>Longitudinal Data</span>
@@ -192,28 +196,28 @@
       <section class="section" id="experience">
         <div class="section-heading">
           <p class="eyebrow">Experience</p>
-          <h2>Research and engineering timeline</h2>
+          <h2>Selected research and engineering roles</h2>
         </div>
         <div class="timeline">
           <div class="timeline-item">
             <span class="timeline-year">2025 - Now</span>
             <div>
               <h3>Lead Researcher, AIMP Lab, Northwestern University</h3>
-              <p>Leading AnyCXR and 2.5D low-dose X-ray denoising work, including weak supervision, synthetic data, diffusion modeling, and motion-robust reconstruction.</p>
+              <p>Leading AnyCXR and 2.5D low-dose X-ray denoising projects, including synthetic-data pipelines, weak supervision, diffusion modeling, and motion-robust reconstruction.</p>
             </div>
           </div>
           <div class="timeline-item">
             <span class="timeline-year">2026 - Now</span>
             <div>
-              <h3>Quantitative Researcher, AllianceBernstein × Vanderbilt University</h3>
-              <p>Building LLM-based factor extraction, supervised fine-tuning datasets, and reasoning-enhanced pipelines over a decade of EDGAR filings.</p>
+              <h3>Quantitative Researcher, AllianceBernstein x Vanderbilt University</h3>
+              <p>Building LLM-based factor extraction, supervised fine-tuning datasets, and reasoning pipelines over 10 years of EDGAR filings.</p>
             </div>
           </div>
           <div class="timeline-item">
             <span class="timeline-year">2025 - Now</span>
             <div>
               <h3>Data Architect and Engineer, Ultimate Consequences Lab, Vanderbilt University</h3>
-              <p>Designed database and data-collection infrastructure, modernized legacy R workflows, and supported stable analysis for mortality and life-history datasets.</p>
+              <p>Designed end-to-end data infrastructure, improved legacy R workflows, and supported analysis for mortality and life-history data across 639 individuals.</p>
             </div>
           </div>
           <div class="timeline-item">
@@ -236,12 +240,12 @@
       <section class="section contact-section" id="contact">
         <div class="section-heading">
           <p class="eyebrow">Contact</p>
-          <h2>Open to research collaboration and applied ML work</h2>
+          <h2>Contact</h2>
         </div>
         <div class="contact-panel">
           <p>
-            If you are working on medical AI, robust machine learning, generative modeling,
-            or LLM systems for difficult real-world data, feel free to reach out.
+            I am happy to talk about medical AI, generative reconstruction, quantitative research,
+            and LLM systems for messy high-noise data.
           </p>
           <div class="contact-actions">
             <a class="button button-primary" href="mailto:zifei.dong@vanderbilt.edu">zifei.dong@vanderbilt.edu</a>
