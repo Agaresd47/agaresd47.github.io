@@ -1,8 +1,8 @@
-import { getProfileSection } from "@/utils/profileData";
+import { getProfileSection, type Locale } from "@/utils/profileData";
 import Image from "next/image";
 
-export default function ProjectsSection() {
-  const projects = getProfileSection("projects");
+export default function ProjectsSection({ locale = "en" }: { locale?: Locale }) {
+  const projects = getProfileSection("projects", locale);
 
   if (!projects || projects.length === 0) {
     return null; // Return null if no projects are found
@@ -12,7 +12,7 @@ export default function ProjectsSection() {
     <section id="projects" className="py-20 bg-white dark:bg-neutral-900">
       <div className="container px-6 mx-auto">
         <h2 className="mb-12 text-3xl font-bold text-center">
-          Selected Work
+          {locale === "zh" ? "代表工作" : "Selected Work"}
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {projects.map((project) => {
@@ -86,7 +86,7 @@ export default function ProjectsSection() {
                         rel="noopener noreferrer"
                         className="text-blue-600 dark:text-blue-400 hover:underline"
                       >
-                        External Link
+                        {locale === "zh" ? "外部链接" : "External Link"}
                       </a>
                     )}
                     {project.github && (

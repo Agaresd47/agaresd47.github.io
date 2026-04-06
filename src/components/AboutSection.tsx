@@ -1,13 +1,14 @@
-import { getProfileSection } from "@/utils/profileData";
+import { getProfileSection, type Locale } from "@/utils/profileData";
 
-export default function AboutSection() {
-  // Get about data from JSON file
-  const about = getProfileSection("about");
+export default function AboutSection({ locale = "en" }: { locale?: Locale }) {
+  const about = getProfileSection("about", locale);
 
   return (
     <section id="about" className="bg-white dark:bg-neutral-900 py-20">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12 text-center">Profile</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          {locale === "zh" ? "简介" : "Profile"}
+        </h2>
         <div className="max-w-3xl mx-auto">
           {about.paragraphs.map((paragraph, index) => (
             <p

@@ -1,13 +1,18 @@
-import { getProfileSection } from "@/utils/profileData";
+import { getProfileSection, type Locale } from "@/utils/profileData";
 
-export default function EducationSection() {
-  // Get education data from JSON file
-  const education = getProfileSection("education");
+export default function EducationSection({
+  locale = "en",
+}: {
+  locale?: Locale;
+}) {
+  const education = getProfileSection("education", locale);
 
   return (
     <section id="education" className="bg-white dark:bg-neutral-900 py-20">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold mb-12 text-center">Education</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          {locale === "zh" ? "教育背景" : "Education"}
+        </h2>
         <div className="max-w-3xl mx-auto space-y-8">
           {education.map((edu, index) => (
             <div key={index}>

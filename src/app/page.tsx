@@ -11,12 +11,12 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import AnimateSection from "@/components/AnimateSection";
 import HashLinkHandler from "@/components/HashLinkHandler";
-import { getProfileSection } from "@/utils/profileData";
+import { getProfileSection, type Locale } from "@/utils/profileData";
 
 // Define metadata for SEO
 export const metadata: Metadata = {
-  title: getProfileSection("basics").name,
-  description: getProfileSection("basics").metaDescription,
+  title: getProfileSection("basics", "en").name,
+  description: getProfileSection("basics", "en").metaDescription,
 };
 
 // Component map for dynamic section rendering
@@ -29,35 +29,38 @@ const sectionComponents = {
   contact: ContactSection,
 };
 
-export default function Home() {
-  // Get navigation items from profile data
-  const navigationItems = getProfileSection("navigation");
+function PortfolioPage({ locale = "en" }: { locale?: Locale }) {
+  const navigationItems = getProfileSection("navigation", locale);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 dark:from-neutral-900 dark:to-neutral-800 font-[family-name:var(--font-geist-sans)]">
       <HashLinkHandler />
-      <Header />
+      <Header locale={locale} />
       <main>
-        <HeroSection />
+        <HeroSection locale={locale} />
 
-        {/* Dynamically render sections based on navigation order */}
         {navigationItems.map((item) => {
           const sectionId = item.href.replace("#", "");
           const SectionComponent =
             sectionComponents[sectionId as keyof typeof sectionComponents];
 
-          // Skip if no matching component
           if (!SectionComponent) return null;
 
           return (
             <AnimateSection key={sectionId} id={sectionId}>
-              <SectionComponent />
+              <SectionComponent locale={locale} />
             </AnimateSection>
           );
         })}
       </main>
-      <Footer />
+      <Footer locale={locale} />
       <ScrollToTop />
     </div>
   );
 }
+
+export default function Home() {
+  return <PortfolioPage locale="en" />;
+}
+
+export { PortfolioPage };

@@ -1,7 +1,7 @@
-import { getProfileSection } from "@/utils/profileData";
+import { getProfileSection, type Locale } from "@/utils/profileData";
 
-export default function SkillsSection() {
-  const skills = getProfileSection("skills");
+export default function SkillsSection({ locale = "en" }: { locale?: Locale }) {
+  const skills = getProfileSection("skills", locale);
 
   if (!skills || !Array.isArray(skills) || skills.length === 0) {
     return null; // or some fallback UI
@@ -11,7 +11,7 @@ export default function SkillsSection() {
     <section id="skills" className="py-20">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold mb-12 text-center">
-          Technical Toolkit
+          {locale === "zh" ? "技能栈" : "Technical Toolkit"}
         </h2>
 
         <div className="max-w-4xl mx-auto">

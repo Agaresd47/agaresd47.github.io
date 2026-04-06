@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { getProfileSection } from "@/utils/profileData";
+import { getProfileSection, type Locale } from "@/utils/profileData";
 
-export default function HeroSection() {
-  const basics = getProfileSection("basics");
+export default function HeroSection({ locale = "en" }: { locale?: Locale }) {
+  const basics = getProfileSection("basics", locale);
+  const isZh = locale === "zh";
 
   return (
     <section className="container flex flex-col items-center px-6 py-20 mx-auto">
@@ -53,13 +54,13 @@ export default function HeroSection() {
           rel="noopener noreferrer"
           className="px-6 py-3 text-center rounded-full btn-primary"
         >
-          Open Resume
+          {isZh ? "打开简历" : "Open Resume"}
         </a>
         <a
           href="#experience"
           className="px-6 py-3 text-center rounded-full btn-secondary"
         >
-          View Experience
+          {isZh ? "查看经历" : "View Experience"}
         </a>
       </div>
     </section>

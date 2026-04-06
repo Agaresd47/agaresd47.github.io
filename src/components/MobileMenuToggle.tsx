@@ -1,11 +1,16 @@
 "use client";
+import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { getProfileSection } from "@/utils/profileData";
+import { getProfileSection, type Locale } from "@/utils/profileData";
 
-export default function MobileMenuToggle() {
-  // Get navigation and basics data from JSON file
-  const navigation = getProfileSection("navigation");
-  const basics = getProfileSection("basics");
+export default function MobileMenuToggle({
+  locale = "en",
+}: {
+  locale?: Locale;
+}) {
+  const navigation = getProfileSection("navigation", locale);
+  const basics = getProfileSection("basics", locale);
+  const isZh = locale === "zh";
 
   // Start with a consistent state
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -119,6 +124,22 @@ export default function MobileMenuToggle() {
         >
           <nav className="p-4">
             <ul className="space-y-4">
+              <li className="flex gap-2 px-3">
+                <Link
+                  href="/"
+                  className={`px-3 py-2 rounded-md text-sm ${!isZh ? "bg-gray-900 text-white dark:bg-white dark:text-black" : "text-gray-600 dark:text-gray-300"}`}
+                  onClick={toggleMenu}
+                >
+                  EN
+                </Link>
+                <Link
+                  href="/zh"
+                  className={`px-3 py-2 rounded-md text-sm ${isZh ? "bg-gray-900 text-white dark:bg-white dark:text-black" : "text-gray-600 dark:text-gray-300"}`}
+                  onClick={toggleMenu}
+                >
+                  中文
+                </Link>
+              </li>
               {navigation.map((item) => (
                 <li key={item.href}>
                   <a

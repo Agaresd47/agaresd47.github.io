@@ -1,10 +1,17 @@
 import profileData from "@/data/profile.json";
+import profileDataZh from "@/data/profile.zh.json";
 
 // Mark as server-only to prevent client-side usage
 // Add this import if you're using Next.js 13+
 // import 'server-only';
 
 export type ProfileData = typeof profileData;
+export type Locale = "en" | "zh";
+
+const localeMap = {
+  en: profileData,
+  zh: profileDataZh,
+} as const;
 
 /**
  * Interface for blog-style project presentation
@@ -95,17 +102,18 @@ export interface Project {
 /**
  * Returns the complete profile data
  */
-export const getProfileData = (): ProfileData => {
-  return profileData;
+export const getProfileData = (locale: Locale = "en"): ProfileData => {
+  return localeMap[locale] as ProfileData;
 };
 
 /**
  * Returns a specific section of profile data
  */
 export const getProfileSection = <T extends keyof ProfileData>(
-  section: T
+  section: T,
+  locale: Locale = "en"
 ): ProfileData[T] => {
-  return profileData[section];
+  return localeMap[locale][section] as ProfileData[T];
 };
 
 /**
@@ -153,7 +161,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
     }
   } else {
     // When running on client side, get from projects in profile data
-    const projects = getProfileSection("projects") as unknown as Project[];
+    const projects = getProfileSection("projects", "en") as unknown as Project[];
     return (
       projects.find((project) => getProjectSlug(project.name) === slug) || null
     );
@@ -165,7 +173,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
  * Uses async/await for Next.js App Router compatibility
  */
 export async function getAllProjects(): Promise<Project[]> {
-  const projects = getProfileSection("projects") as unknown as Project[];
+  const projects = getProfileSection("projects", "en") as unknown as Project[];
 
   // If projects are already in profile.json, return them
   if (projects && projects.length) {

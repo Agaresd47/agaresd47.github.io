@@ -1,21 +1,23 @@
+import Link from "next/link";
 import MobileMenuToggle from "./MobileMenuToggle";
-import { getProfileSection } from "@/utils/profileData";
+import { getProfileSection, type Locale } from "@/utils/profileData";
 
-export default function Header() {
-  const basics = getProfileSection("basics");
-  const navigation = getProfileSection("navigation");
+export default function Header({ locale = "en" }: { locale?: Locale }) {
+  const basics = getProfileSection("basics", locale);
+  const navigation = getProfileSection("navigation", locale);
+  const isZh = locale === "zh";
 
   return (
     <header
       className={`sticky top-0 z-20 backdrop-blur-sm bg-white/70 dark:bg-black/70 border-b border-gray-200 dark:border-gray-800`}
     >
       <div className="container flex items-center justify-between px-6 py-4 mx-auto">
-        <a
-          href="#"
+        <Link
+          href={isZh ? "/zh" : "/"}
           className="transition-colors hover:text-blue-600 dark:hover:text-blue-400"
         >
           <h1 className="text-xl font-bold tracking-tight">{basics.name}</h1>
-        </a>
+        </Link>
 
         {/* Desktop navigation with CV button */}
         <nav className="items-center hidden md:flex">
@@ -31,6 +33,21 @@ export default function Header() {
               </li>
             ))}
           </ul>
+
+          <div className="flex items-center mr-4 text-sm border rounded-full border-gray-300 dark:border-gray-700 overflow-hidden">
+            <Link
+              href="/"
+              className={`px-3 py-2 ${!isZh ? "bg-gray-900 text-white dark:bg-white dark:text-black" : "text-gray-600 dark:text-gray-300"}`}
+            >
+              EN
+            </Link>
+            <Link
+              href="/zh"
+              className={`px-3 py-2 ${isZh ? "bg-gray-900 text-white dark:bg-white dark:text-black" : "text-gray-600 dark:text-gray-300"}`}
+            >
+              中文
+            </Link>
+          </div>
 
           <a
             href={basics.resumeUrl}

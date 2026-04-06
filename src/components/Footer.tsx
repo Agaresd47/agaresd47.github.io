@@ -1,7 +1,7 @@
-import { getProfileSection, formatText } from "@/utils/profileData";
+import { getProfileSection, formatText, type Locale } from "@/utils/profileData";
 
-export default function Footer() {
-  const footer = getProfileSection("footer");
+export default function Footer({ locale = "en" }: { locale?: Locale }) {
+  const footer = getProfileSection("footer", locale);
 
   // Format copyright with current year
   const copyright = formatText(footer.copyright, {

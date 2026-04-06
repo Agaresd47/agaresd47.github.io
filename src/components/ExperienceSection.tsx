@@ -1,14 +1,17 @@
-import { getProfileSection } from "@/utils/profileData";
+import { getProfileSection, type Locale } from "@/utils/profileData";
 
-export default function ExperienceSection() {
-  // Get experience data from JSON file
-  const experiences = getProfileSection("experience");
+export default function ExperienceSection({
+  locale = "en",
+}: {
+  locale?: Locale;
+}) {
+  const experiences = getProfileSection("experience", locale);
 
   return (
     <section id="experience" className="py-20">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl font-bold mb-12 text-center">
-          Selected Experience
+          {locale === "zh" ? "代表经历" : "Selected Experience"}
         </h2>
         <div className="max-w-4xl mx-auto space-y-12">
           {experiences.map((job, index) => (
